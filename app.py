@@ -18,7 +18,7 @@ thanks_message = "\nСкиньте пожалуйста в чат несколь
 
 forward_list = []
 
-with open("__token_sosbird_bot_chat_parser.txt", "r") as f:
+with open("__token_sosbird_bot_chat_parser_bot.txt", "r") as f:
     TELEGRAM_BOT_TOKEN = f.read()
 
 def get_r(A, B):
@@ -381,7 +381,7 @@ async def cb_reaction_button(update: Update, context: ContextTypes.DEFAULT_TYPE)
 async def cb_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print("message")
     if update["message"] is None:
-        print(json.dumps(update.to_dict(), indent = 4))
+        #print(json.dumps(update.to_dict(), indent = 4))
         return None
     text = json.dumps(update.to_dict())
     all_lat, all_lon = get_coord_from_text(text)
